@@ -10,19 +10,6 @@ public class MainGame {
 		boolean wrongInput = true;
 		System.out.println("War Card Game - SVI Edition");
 
-		// Creating list for Deck
-		ArrayList<Card> deck = new ArrayList<>();
-		// Adding cards to deck
-		for (Suit suit : Suit.values()) {
-			for (Rank rank : Rank.values()) {
-				Card card = new Card(rank.getRankName(), suit.getSuitName(), rank.getRankValue(), suit.getSuitvalue());
-				deck.add(card);
-			}
-		}
-		// Showing the initial deck
-		System.out.println("Initial Deck: ");
-		System.out.println(deck + "\n");
-
 		// Initializes scanner
 		Scanner scanInput = new Scanner(System.in);
 
@@ -61,6 +48,20 @@ public class MainGame {
 
 		// Closing the scanner since every input is done
 		scanInput.close();
+		
+
+		// Creating list for Deck
+		ArrayList<Card> deck = new ArrayList<>();
+		// Adding cards to deck
+		for (Suit suit : Suit.values()) {
+			for (Rank rank : Rank.values()) {
+				Card card = new Card(rank.getRankName(), suit.getSuitName(), rank.getRankValue(), suit.getSuitvalue());
+				deck.add(card);
+			}
+		}
+		// Showing the initial deck
+		System.out.println("Initial Deck: ");
+		System.out.println(deck + "\n");
 
 		// Shuffle the deck
 		ArrayList<Card> shuffledDeck = GameMethods.faroShuffleDeck(shuffleCount, deck);
