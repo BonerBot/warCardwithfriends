@@ -35,11 +35,12 @@ public class GameMethods {
 				n = 0;
 			}
 		} while (!deck.isEmpty());
-		
-		System.out.println("\nStarting cards per player : ");
-		for (Player player : playerList) {
-			System.out.println(player.getPlayerName() + " : " + player.getPlayerHands());
-		}
+		System.out.println("\nCards are now distributed to each players.");
+		// uncomment the next lines if you want to see the starting hand of each player.
+// 		System.out.println("\nStarting cards per player : ");
+// 		for (Player player : playerList) {
+// 			System.out.println(player.getPlayerName() + " : " + player.getPlayerHands());
+// 		}
 	}
 
 	public static List<Card> getTopCards(List<Player> playerList) {
