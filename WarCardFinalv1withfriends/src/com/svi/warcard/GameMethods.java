@@ -53,7 +53,7 @@ public class GameMethods {
 
 	public static void playGame(List<Player> playerList, int numberOfPlayers) {
 		List<Card> topCardList = new ArrayList<Card>();
-		System.out.println("----------------------------------------------------");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		for (Player player : playerList) {
 			System.out.println(player.getPlayerName() + " : " + player.getPlayerHands());
 		}
