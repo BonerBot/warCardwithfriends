@@ -82,7 +82,7 @@ public class MainGame {
 		while (playerList.size() > 1) {
 			System.out.println("\nROUND: " + round);
 			GameMethods.playGame(playerList, playerCount);
-			System.out.println("----------------------------------------------------");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			round++;
 		}
 		// If player list size = 1 , then Finish the game
