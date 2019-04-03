@@ -53,20 +53,26 @@ public class GameMethods {
 	}
 
 	public static void playGame(List<Player> playerList, int numberOfPlayers) {
+		// Create a new List for the top cards use for War
 		List<Card> topCardList = new ArrayList<Card>();
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		for (Player player : playerList) {
 			System.out.println(player.getPlayerName() + " : " + player.getPlayerHands());
 		}
+		// gets the cards to be compared from the top of deck of each player
 		topCardList = (ArrayList<Card>) GameMethods.getTopCards(playerList);
 		System.out.println("Table's Cards: " + topCardList);
-		Card topCard = Collections.max(topCardList, Comparator.comparing(s -> s.getCardValue()));	
-		int tempindex = topCardList.indexOf(topCard);
-		Collections.rotate(topCardList, topCardList.size() - topCardList.indexOf(topCard));
-		playerList.get(tempindex).getPlayerHands().addAll(topCardList);
-		System.out.println("The winning card is : " + topCard);
+		// code for comparing the said cards
+		Card topCard = Collections.max(topCardList, Comparator.comparing(card -> card.getCardValue()));
+		// stores the index of the winning card
+		int tempIndex = topCardList.indexOf(topCard);
+		// puts the winner card first when returning it at the bottom of the deck
+		Collections.rotate(topCardList, topCardList.size() - tempIndex);
+		playerList.get(tempIndex).getPlayerHands().addAll(topCardList);
+		System.out.println("The winner of the round is " + playerList.get(tempIndex).getPlayerName() + " with the card "
+				+ "[" + topCard + "]");
 		topCardList.clear();
-		playerList.removeIf(player -> player.getPlayerHands().isEmpty()); 
+		playerList.removeIf(player -> player.getPlayerHands().isEmpty());
 	}
 
 }
