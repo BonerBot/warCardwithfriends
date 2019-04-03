@@ -55,7 +55,7 @@ public class MainGame {
 		// Adding cards to deck
 		for (Suit suit : Suit.values()) {
 			for (Rank rank : Rank.values()) {
-				Card card = new Card(rank.getRankName(), suit.getSuitName(), rank.getRankValue(), suit.getSuitvalue());
+				Card card = new Card(rank.getRankName(), rank.getRankValue(), suit.getSuitName(), suit.getSuitvalue());
 				deck.add(card);
 			}
 		}
