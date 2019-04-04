@@ -47,15 +47,14 @@ public class MainGame {
 		} while (wrongInput);
 
 		// Closing the scanner since every input is done
-		scanInput.close();
-		
+		scanInput.close();	
 
 		// Creating list for Deck
 		ArrayList<Card> deck = new ArrayList<>();
 		// Adding cards to deck
 		for (Suit suit : Suit.values()) {
 			for (Rank rank : Rank.values()) {
-				Card card = new Card(rank.getRankName(), rank.getRankValue(), suit.getSuitName(), suit.getSuitvalue());
+				Card card = new Card(rank.getRankName(), rank.getRankValue(), suit.getSuitName(),  suit.getSuitvalue());
 				deck.add(card);
 			}
 		}
@@ -75,7 +74,7 @@ public class MainGame {
 		}
 
 		// Deal cards
-		GameMethods.giveCards(playerCount, playerList, shuffledDeck);
+		GameMethods.dealCards(playerCount, playerList, shuffledDeck);
 
 		// Start Game
 		int round = 1;
@@ -85,7 +84,7 @@ public class MainGame {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			round++;
 		}
-		// If player list size = 1 , then Finish the game
+		// If player list size = 1 , then game will end
 		System.out.println("GAME OVER");
 		System.out.println("\nThe winner is " + playerList.get(0).getPlayerName() + ". Total Round : " + (round - 1));
 		for (Player player : playerList) {
