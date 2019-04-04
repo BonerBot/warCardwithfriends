@@ -23,8 +23,8 @@ public class GameMethods {
 		return shuffledDeck;
 	}
 
-	public static void giveCards(int numberOfPlayers, List<Player> playerList, ArrayList<Card> deck) {
-		int n = 0;
+	public static void dealCards(int numberOfPlayers, List<Player> playerList, ArrayList<Card> deck) {
+		int n = 0; // number of decks, form from number of players
 		do {
 			if (n != numberOfPlayers) {
 				for (n = 0; n < numberOfPlayers; n++) {
@@ -36,11 +36,13 @@ public class GameMethods {
 			}
 		} while (!deck.isEmpty());
 		System.out.println("\nCards are now distributed to each players.");
-		// uncomment the next lines if you want to see the starting hand of each player.
-// 		System.out.println("\nStarting cards per player : ");
-// 		for (Player player : playerList) {
-// 			System.out.println(player.getPlayerName() + " : " + player.getPlayerHands());
-// 		}
+		// uncomment the next lines if you want to see the starting hand of each
+		// player
+		// System.out.println("\nStarting cards per player : ");
+		// for (Player player : playerList) {
+		// System.out.println(player.getPlayerName() + " : " +
+		// player.getPlayerHands());
+		// }
 	}
 
 	public static List<Card> getTopCards(List<Player> playerList) {
@@ -53,9 +55,10 @@ public class GameMethods {
 	}
 
 	public static void playGame(List<Player> playerList, int numberOfPlayers) {
-		// Create a new List for the top cards use for War
+		// Create a new List for the top cards use for comparing of Card values
 		List<Card> topCardList = new ArrayList<Card>();
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		// shows the hand of each player
 		for (Player player : playerList) {
 			System.out.println(player.getPlayerName() + " : " + player.getPlayerHands());
 		}
